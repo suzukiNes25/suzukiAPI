@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 const API_ENDPOINT1 = 'https://8j5yfns1n6.execute-api.ap-northeast-1.amazonaws.com/function-Suzuki1';
 const API_ENDPOINT2 = 'https://8j5yfns1n6.execute-api.ap-northeast-1.amazonaws.com/function-Suzuki2';
-const API_ENDPOINT3 = 'https://8j5yfns1n6.execute-api.ap-northeast-1.amazonaws.com/function-Suzuki3';
-const API_ENDPOINT4 = 'https://8j5yfns1n6.execute-api.ap-northeast-1.amazonaws.com/function-SuzukiPOST';
 
 function App() {
   const [result, setResult] = useState('結果がここに表示されます');
@@ -50,20 +48,6 @@ function App() {
               className={loadingButton === 'b2' ? 'loading' : ''}
             >
               メッセージ2を取得
-            </button>
-            <button
-              onClick={() => callLambda(API_ENDPOINT3, 'b3')}
-              disabled={loadingButton === 'b3'}
-              className={loadingButton === 'b3' ? 'loading' : ''}
-            >
-              メッセージ3を取得
-            </button>
-            <button
-              onClick={() => callLambda(API_ENDPOINT4, 'b4')}
-              disabled={loadingButton === 'b4'}
-              className={loadingButton === 'b4' ? 'loading' : ''}
-            >
-              メッセージ4を取得
             </button>
           </div>
           <div id="result" className={result !== '' ? 'active' : ''}>
